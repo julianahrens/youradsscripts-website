@@ -1,4 +1,2 @@
 steps:
 - name: 'gcr.io/${PROJECT_ID}/hugo'
-
-images: ['gcr.io/${PROJECT_ID}/hugo']
