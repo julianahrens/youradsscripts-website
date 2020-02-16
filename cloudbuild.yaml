@@ -1,6 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/git'
-  args: ['submodule', 'update', '--init', '--recursive', '--remote']
 - name: 'gcr.io/${PROJECT_ID}/hugo'
+  args: ["--theme=hugo-swift-theme"]
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ["-m", "rsync", "-r", "-c", "-d", "./public/.", "gs://${_BUCKET_NAME}"]
