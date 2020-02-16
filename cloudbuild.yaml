@@ -10,7 +10,6 @@ steps:
 - id: 'hugo'
   name: 'gcr.io/${PROJECT_ID}/hugo'
   args: 
-  - '--theme=hugo-swift-theme'
   - '--baseURL=https://${_BUCKET_NAME}/'
   - '--minify'
   waitFor: ['submodules']

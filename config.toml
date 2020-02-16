@@ -1,33 +1,84 @@
-baseurl = "https://youradsscripts.com/"  # Include trailing slash
+# default configuration
+baseURL = "https://youradsscripts.com"
+languageCode = "en-us"
+summaryLength = "10"
+theme = "kross-hugo"
 title = "Your Ads Scripts"
-theme = "hugo-swift-theme"
-author = "Julian Ahrens"
-copyright = "Copyright © 2020, Julian Ahrens; all rights reserved."
-canonifyurls = true
-paginate = 4
-# Enable syntax highlighting
-# comment on delete the following lines 11 ~ 13
-pygmentsCodefences = true
-pygmentsCodefencesGuessSyntax = true
 
+# css plugins
+[[params.plugins.css]]
+URL = "plugins/bootstrap/bootstrap.min.css"
+
+[[params.plugins.css]]
+URL = "plugins/slick/slick.css"
+
+[[params.plugins.css]]
+URL = "plugins/themify-icons/themify-icons.css"
+
+
+# js plugin
+[[params.plugins.js]]
+URL = "plugins/jQuery/jquery.min.js"
+
+[[params.plugins.js]]
+URL = "plugins/bootstrap/bootstrap.min.js"
+
+[[params.plugins.js]]
+URL = "plugins/slick/slick.min.js"
+
+[[params.plugins.js]]
+URL = "plugins/shuffle/shuffle.min.js"
+
+
+# menu
+[[menu.main]]
+URL = "blog"
+name = "Blog"
+weight = 2
+
+
+# default parameters
 [params]
-  # ga_analytics = "" # google analytics ID e.g UA-116386578-1
+home = "Home"
+# logo = "images/logo.png"
+# theme color
+theme_color = "#FABC05"
+# contact info
+# phone = "+880 2544 658 256"
+email = "julian@youradsscripts.com"
+# address = "125/A, CA Commercial Area, California, USA"
+# meta description
+author = "Julian Ahrens"
+# description = "This is meta description"
+# google analitycs
+# google_analitycs_id = "Your ID"
+# copyright
+copyright = "Copyrighht &copy; 2020, Julian Ahrens"
 
-  # ga_verify = "" # google verification code e.g 5jb-rxeBfITeJQKOuUss3ud6FPGTxXkCho-ZN5qlrZg
-  # twitter = "" # twitter handle e.g @weru
-  # logo = "logo.png"
-  # author = "Weru" # default author
-  # image = "placeholder-image.png" # used whenever a page image is not set
-  # blogDir = "blogFolderName" # uncomment and edit to exclude normal pages ... see issue #57
 
-# [params.staticman]
-#   endpoint = ""  # URL of your own API deployment (without trailing slash), default: "https://staticman-frama.herokuapp.com"
-#   gitProvider = "github"  # Either "github" or "gitlab"
-#   username = "username"  # GitHub/GitLab user name
-#   repository = "repo"  # GitHub/GitLab user name
-#   branch = "master"  # Branch holding the source code for your site, should match the `branch` parameter in `staticman.yml`
-#
-#   # If you use reCAPTCHA v2, you must also set these parameters in staticman.yml
-#   [Params.staticman.reCaptcha]
-#     siteKey = ""  # Use your own site key, you need to apply for one on Google
-#     secret  = ""  # ENCRYPT your password by going to https://<staticman-endpoint>/v3/encrypt/<your-site-secret>
+# contact
+[params.contact]
+enable = false
+# form_action = "#" # contact form works with : https://formspree.io
+
+# preloader
+[params.preloader]
+enable = true
+preloader = "" # use png, jpg, svg or gif format
+
+# social site
+[[params.social]]
+# URL = "#"
+# icon = "ti-facebook"
+
+[[params.social]]
+# URL = "#"
+# icon = "ti-instagram"
+
+[[params.social]]
+# URL = "#"
+# icon = "ti-dribbble"
+
+[[params.social]]
+# URL = "#"
+# icon = "ti-twitter-alt"

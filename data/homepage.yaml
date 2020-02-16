@@ -1,0 +1,44 @@
+# banner
+banner:
+  title : "Hi! I’m <br> Julian, <br> scripts dev"
+
+# about
+about:
+  enable : true
+  content : "While working for a huge german e-commerce company, I found my love to Ads Scripts."
+  button:
+    enable : false
+
+# skill
+skill:
+  enable : false
+
+# experience
+experience:
+  enable : false
+
+# education
+education:
+  enable : false
+
+# service
+service:
+  enable : false
+
+# portfolio
+portfolio:
+  enable : false
+
+# testimonial
+testimonial:
+  enable : false
+
+# client logo slider
+clients_logo_slider:
+  enable : false
+
+# blog
+blog:
+  enable : true
+  title : "Blog Posts"
+  # blog post comes from "content/blog" folder
