@@ -2,6 +2,6 @@ steps:
 - name: 'gcr.io/${PROJECT_ID}/hugo'
   args: ["--theme=hugo-swift-theme"]
 - name: 'ubuntu'
-  args: ["cd public && ls -la"]
+  args: ["bash", "cd public && ls -la"]
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ["-m", "rsync", "-r", "-c", "-d", "./public/.", "gs://${_BUCKET_NAME}"]
