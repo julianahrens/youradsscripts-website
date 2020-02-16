@@ -1,9 +1,11 @@
 steps:
 - name: 'gcr.io/${PROJECT_ID}/hugo'
   args: ["--theme=hugo-swift-theme"]
-- name: 'ubuntu'
-  args: ["cd", "public/"]
-- name: 'ubuntu'
-  args: ["ls", "-la"]
+  volumes:
+  - name: 'persistent'
+    path: './public'
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ["-m", "rsync", "-r", "-c", "-d", "./public/.", "gs://${_BUCKET_NAME}"]
+  volumes:
+  - name: 'persistent'
+    path: './public'
