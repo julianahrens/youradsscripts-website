@@ -1,11 +1,17 @@
 steps:
-- name: 'gcr.io/${PROJECT_ID}/hugo'
-  args: ["--theme=hugo-swift-theme", "--destination=/website"]
-  volumes:
-  - name: 'persistent'
-    path: '/website'
-- name: 'gcr.io/cloud-builders/gsutil'
+- id: 'submodules'
+  name: 'gcr.io/cloud-builders/git'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    git submodule init
+    git submodule update
+- id: 'hugo'
+  name: 'gcr.io/${PROJECT_ID}/hugo'
+  args: ["--theme=hugo-swift-theme"]
+  waitFor: ['submodules']
+- id: 'publish'
+  name: 'gcr.io/cloud-builders/gsutil'
   args: ["-m", "rsync", "-r", "-c", "-d", "/website/.", "gs://${_BUCKET_NAME}"]
-  volumes:
-  - name: 'persistent'
-    path: '/website'
+  waitFor: ['hugo']
