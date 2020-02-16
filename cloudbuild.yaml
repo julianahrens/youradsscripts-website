@@ -13,5 +13,12 @@ steps:
   waitFor: ['submodules']
 - id: 'publish'
   name: 'gcr.io/cloud-builders/gsutil'
-  args: ["-m", "rsync", "-r", "-c", "-d", "/website/.", "gs://${_BUCKET_NAME}"]
+  args: 
+  - '-m'
+  - 'rsync'
+  - '-r'
+  - '-c'
+  - '-d'
+  - './public/.'
+  - 'gs://${_BUCKET_NAME}'
   waitFor: ['hugo']
