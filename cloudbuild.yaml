@@ -1,2 +1,10 @@
 steps:
 - name: 'gcr.io/${PROJECT_ID}/hugo'
+- name: 'gcr.io/cloud-builders/gsutil'
+  args:
+    - '-m'
+    - 'rsync'
+    - '-d'
+    - '-r'
+    - 'public/'
+    - 'gs://${_BUCKET_NAME}'
