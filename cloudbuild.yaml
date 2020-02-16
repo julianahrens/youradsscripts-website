@@ -1,16 +1,11 @@
 steps:
 - name: 'gcr.io/${PROJECT_ID}/hugo'
-  volumes:
-    - name: 'public'
-      path: /public
 - name: 'gcr.io/cloud-builders/gsutil'
-  args:
-    - '-m'
-    - 'rsync'
-    - '-d'
-    - '-r'
-    - '/public/'
-    - 'gs://${_BUCKET_NAME}'
-  volumes:
-    - name: 'public'
-      path: /public
+  args: 
+    "-m", 
+    "rsync", 
+    "-r", 
+    "-c", 
+    "-d", 
+    "./public/.", 
+    "gs://${_BUCKET_NAME}"
